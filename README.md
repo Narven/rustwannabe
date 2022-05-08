@@ -13,3 +13,6 @@ Run:
 ```sh
 make
 ```
+
+> File should open automaticaly after build.
+> Final file will be in the `exports` folder.
