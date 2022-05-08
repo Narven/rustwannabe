@@ -1,3 +1,5 @@
+# Functions
+
 ```rust
 fn do_stuff() {
 }
@@ -10,6 +12,7 @@ Funtions:
 - start with `fn` (FUN)
 - snake_case by convention
 - they dont have to appear in any order to be able to be called
+
 
 ```rust
 fn do_stuff(qty: i32, oz: f64) -> f64 {

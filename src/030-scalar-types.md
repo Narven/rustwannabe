@@ -1,3 +1,5 @@
+# Scalar Types
+
 The are 4 Scalar types:
 
 
@@ -9,30 +11,15 @@ The are 4 Scalar types:
 ### Integer Types
 
 
-### Table
+Table describing possible integer types:
 
-|---|---|
-|isize | usize |
-
-i128
-
-u128
-
-i64
-
-u64
-
-i32
-
-u32
-
-i16
-
-u16
-
-i8
-
-u8
+| isize | usize |
+| ----- | ----- |
+| i128 | u128 |
+| i64 | u64 |
+| i32 | u32 |
+| i16 | u16 |
+| i8 | u8 |
 
 **SIGNED (-)**
 

@@ -1,3 +1,5 @@
+# Threads
+
 ```rust
 use std::thread;
 

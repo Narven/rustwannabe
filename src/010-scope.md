@@ -1,3 +1,5 @@
+# Scope
+
 > The scope of a variable starts from the place where it is created till the end of the block. Along the way is acessed inside blocks.
 
 

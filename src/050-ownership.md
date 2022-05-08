@@ -1,3 +1,5 @@
+# Ownership
+
 **3 Rules of Ownership:**
 
 
@@ -23,9 +25,6 @@ println!("{}", s1); // ERRORRRR
 
 
 ### Table
-
-
-Slow
 
 Unordered
 

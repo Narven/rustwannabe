@@ -1,3 +1,5 @@
+# Strings
+
 Theres are 6 types of STRINGS in Rust standard library, but mostly use 2 of them:
 
 ### str - string slice (&str)

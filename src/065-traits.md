@@ -1,3 +1,5 @@
+# Traits
+
 Traits are similar to interfaces in other languages.
 
 Rust takes **COMPOSITION** over **INHERITHANCE** approach.

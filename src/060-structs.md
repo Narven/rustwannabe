@@ -1,3 +1,5 @@
+# Structs
+
 Structs in Rust are "classes" in other languages.
 
 ```rust
