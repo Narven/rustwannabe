@@ -1,4 +1,4 @@
-# rustwannabe
+# rust wannabe
 
 ### build
 
@@ -8,3 +8,8 @@ needs:
 
 references:
 https://jdhao.github.io/2019/05/30/markdown2pdf_pandoc/
+
+Run:
+```sh
+make
+```
