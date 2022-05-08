@@ -1,3 +1,5 @@
+# Enums
+
 ```rust
 enum Color {
 	Red,

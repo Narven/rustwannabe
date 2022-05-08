@@ -1,3 +1,5 @@
+# Closures
+
 > Closure is anonymous function that can borrow or capture some data in the scope is nested in.
 
 

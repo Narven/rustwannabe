@@ -1,3 +1,5 @@
+# Modules
+
 ```rust
 ❯ tree --noreport
 .

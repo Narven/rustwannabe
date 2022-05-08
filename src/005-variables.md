@@ -1,4 +1,4 @@
-## Variables
+# Variables
 
 In Rust we declare (in rust is called binding) variables using `let` or `const`.
 
@@ -97,23 +97,25 @@ fn main() {
 
 ### Differences between `CONST` and `LET`
 
-##### Const need to be `type annotated`:
+> Const need to be `type annotated`:
 
 ```rust
 const VARIABLE_NAME: u32 = 10;
 ```
 
-##### Consts cannot have `mut` (mutable)
+> Consts cannot have `mut` (mutable)
 
 ```rust
 const mut VARIABLE_NAME: u32 = 10; // WRONG
 ```
 
-##### consts can only be set to constant expressions
+> consts can only be set to constant expressions
+
 
 > we cannot a const to the return value of a function or any value that could be computed at runtime
 
-##### Let variables can be reassigned (even with another type) if they are immutable;
+
+> Let variables can be reassigned (even with another type) if they are immutable;
 
 ```rust
 let x = 10;

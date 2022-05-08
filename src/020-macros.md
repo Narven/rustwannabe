@@ -1,3 +1,5 @@
+# Macros
+
 Macros always end with `!`
 
 ```rust
