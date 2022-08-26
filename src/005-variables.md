@@ -5,58 +5,111 @@ In Rust we declare (in rust is called binding) variables using `let` or `const`.
 
 ```rust
 fn main() {
-	let bunnies = 2;
+	// declare using let statement and initialized to integer 2
+	// by default you can leave out the type annotion, because the
+	// compiler can infer the type
+	let number_of_doors = 3;
 }
 ```
 
-We can defined the type using:
+If you want to be more explicity, you can define the type:
 
 ```rust
 fn main() {
-	let bunnies2: i32 = 2; // we define it to be i32
+	let number_of_doors: i32 = 2; // we define it to be i32
 }
 ```
 
-or we can just let Rust infer the type
-
-```rust
-fn main() {
-	let bunnies2 = 2; // rust infers base on the value
-}
-```
-
-The `i32` is a "short name" tells the compile that the variable `bunnies2` is can only hold `a signed 32-bit integer`.
+The `i32` is a "short name" tells the compile that the variable `number_of_doors` can only hold `a signed 32-bit integer`.
 
 A `integer` is a number without a fractional component.
 
-> 
-> By default variables are IMMUTABLE, unless specified, using **mut**  
-> 
+
+This still does not work:
 
 ```rust
 fn main() {
-	let mut bunnies = 10;
-	bunnies = 20;
+	let wheel_size: i32;
+	if true {
+		wheel_size = 42;
+	}
+
+	println!("{}", wheel_size); // ERROR
+}
+```
+
+But this works:
+
+```rust
+fn main() {
+	let wheel_size: i32;
+	if true {
+		wheel_size = 42;
+	} else {
+		wheel_size = 22;
+	}
+
+	println!("Wheel size is: {}", wheel_size); // SUCESS
 }
 ```
 
 
-### Contants
+## Immutable / Mutable
 
-> Consts by default are written in a UPPER_SNAKE_CASE format
+> 
+> By default variables are IMMUTABLE (CANNOT BE CHANGED), unless specified, using **mut**  
+>
 
 ```rust
-const WRAP_FACTOR: f64 = 9.9;
+fn main() {
+	// we are defining a variable `number_of_doors`, default is IMMUTABLE
+	let number_of_doors = 3;
+	// ... some other code...
+	number_of_doors = 4; // <-- This will throw a compiler ERROR
+}
+```
+
+Using `mut` (MUTABLE):
+
+```rust
+fn main() {
+	// `mut` keyword allows us to tell the compiler,
+	// "I want to be able change this later"
+	let mut number_of_doors = 3;
+	// later on... on some other part of the code...
+	number_of_doors = 4;
+}
+```
+
+## Destructuring
+
+Using `let` we can destructure from the right size and initilize multiple variables at once on the left side:
+
+```rust
+fn main() {
+	// the data on the right side will map to the variables on the left side.
+	let (engine, doors) = (1, 3);
+}
+```
+
+> We are using a Tuple on the right size `(1, 3)`, we will talk more about tuples later in the book.
+
+## Contants
+
+Basic example:
+```rust
+const MILES_PER_HOUR: f64 = 70.5;
 ```
 
 - const instead of let
 - ALL UPPERCASE snake names (convention)
-- type annotation (f64) is mandatory
+- type annotation (f64) is required
 - value assigned must be a constant expression that can be determine at compile time
 
 
-> Variables must be INITIALIZED before you can used them
+> TIP: Variables must be INITIALIZED before you can used them
 
+Constants are usually used has global variables, because they will never change.
 
 ```rust
 fn main() {
@@ -65,39 +118,9 @@ fn main() {
 }
 ```
 
+#### Differences between `CONST` and `LET`
 
-This still does not work:
-
-```rust
-fn main() {
-	let enigma: i32;
-	if true {
-		enigma = 42;
-	}
-
-	println!("{}", enigma); // ERROR
-}
-```
-
-
-But this works:
-
-```rust
-fn main() {
-	let enigma: i32;
-	if true {
-		enigma = 42;
-	} else {
-		enigma = 22;
-	}
-
-	println!("enigma is {}", enigma); // SUCESS
-}
-```
-
-### Differences between `CONST` and `LET`
-
-> Const need to be `type annotated`:
+> Const needs to be `type annotated`:
 
 ```rust
 const VARIABLE_NAME: u32 = 10;
@@ -112,7 +135,7 @@ const mut VARIABLE_NAME: u32 = 10; // WRONG
 > consts can only be set to constant expressions
 
 
-> we cannot a const to the return value of a function or any value that could be computed at runtime
+> we cannot create a const to the return value of a function or any value that could be computed at runtime
 
 
 > Let variables can be reassigned (even with another type) if they are immutable;
@@ -124,11 +147,13 @@ let x = "1000000"; // This is called shadowing
 println!("the value of x is: {}", x);
 ```
 
+---
+
 ## Data types
 
 ### Scalar
 
-> represent a single value
+> A Scalar type represents a single value
 
 Rust has 3 scalar data types:
 
@@ -140,4 +165,9 @@ Rust has 3 scalar data types:
 
 ### Compound
 
-> represent a group of value
+> Compount types represent a group of values
+
+* List
+* Tuple
+
+// TODO add more on compoun

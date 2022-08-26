@@ -62,7 +62,6 @@ if let Some(x) = my_variable {
 }
 ```
 
-
 or we can use the `match` expression:
 
 ```rust
@@ -78,7 +77,6 @@ match my_variable {
 
 > paterns in a match must be exaustive (all possible outcomes must be defined)
 
-
 We can use underscore `_` for any match:
 
 ```rust
@@ -86,6 +84,16 @@ match my_variable {
 	_ => {
 		println!("who cares");
 	},
+}
+```
+
+another example:
+
+```rust
+match "abcd" {
+	"abcd" => println!(),
+	"a" | "b" => println!(),
+	_ => {}
 }
 ```
 

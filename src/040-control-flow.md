@@ -34,45 +34,64 @@ NOTE:
 - ALL blocks must return THE SAME TYPE
 - SEMICOLON at the END
 
-### Loop
+## Loop
 
+In most languages to create an infinite loop we can do:
 
-```rust
-loop {
+```c++
+while true {
+	// code where
 }
 ```
 
+But in Rust we we have special keyword for that `loop`:
+
+```rust
+loop {
+	// code where
+}
+```
+
+One good feature of loops is that they can be labeled:
+
+```rust
+'outer: loop {
+	loop {
+		break 'outer;
+	}
+}
+```
+
+> This example also shows that you can have nested `loops`.
 
 How to break loops:
 
 ```rust
-'bob: loop {
+'outer: loop {
 	loop {
 		loop {
-			break 'bob;
+			break 'outer;
 		}
 	}
 }
 ```
 
-
-continue:
+Using `continue` allows us to... continue:
 
 ```rust
-'bob: loop {
+'outer: loop {
 	loop {
 		continue;
 	}
 }
 ```
 
-
 or
 
 ```rust
-'bob: loop {
+'outer: loop {
 	loop {
-		continue 'bob;
+		continue 'outer;
 	}
 }
 ```

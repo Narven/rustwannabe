@@ -1,5 +1,6 @@
-# Tuple
+# Compound Types (Tuples, Arrays)
 
+## Tupes
 
 ```rust
 let info = (1, 3.3, 999);
@@ -7,9 +8,7 @@ let info = (1, 3.3, 999);
 let info: (u8, f64, i32) = (1, 3.3, 999);
 ```
 
-
-#### How to access members of a tuple (2 ways)
-
+*How to access members of a tuple (2 ways)*
 
 Dot syntax:
 
@@ -33,11 +32,13 @@ let (jets, fuel, ammo) = info;
 > maximum arity in tuples is 12
 
 
-### Arrays
+## Arrays
 
 
 ```rust
 let buf = [1, 2, 3];
 // or
 let buf = [0; 3];  // this specifies the value and how many;
+// or
+let buf:[i32; 3]; = [1, 2, 3]; // this specifies the type and how many;
 ```
