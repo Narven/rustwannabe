@@ -2,12 +2,14 @@
 
 Variables in rust are prety similar to any other language.
 
+{blurb, class: info}
 Rules for defining a variable:
 
 * Names can contain letters, numbers and underscores `_`
 * Must start with a letter or underscore `_`
 * Rust follows the `snake_case` convention for naming variables
 * Immutable by default
+{/blurb}
 
 {caption: "Declaration of variable in rust"}
 ```rust
@@ -27,7 +29,9 @@ fn main() {
 }
 ```
 
-> `i64` means that this type is an integer of 64 bits.
+{blurb, class: info}
+`i64` means that this type is an integer of 64 bits.
+{/blurb}
 
 In the case above if you don't specify the type, the compiler will throw an error. Why? The error thrown by the compiler is pretty self explanatory:
 
@@ -109,9 +113,9 @@ fn main() {
 
 ## Immutable / Mutable
 
-> 
-> By default variables are IMMUTABLE (CANNOT BE CHANGED), unless specified, using **mut**  
->
+{blurb, class: info}
+By default variables are IMMUTABLE (CANNOT BE CHANGED), unless specified, using **mut**
+{/blurb}
 
 {caption: "Defining a IMMUTABLE variable, cannot change."}
 ```rust
@@ -147,7 +151,9 @@ fn main() {
 }
 ```
 
-> We are using a Tuple on the right size `(1, 3)`, we will talk more about tuples later in the book.
+{blurb, class: info}
+We are using a Tuple on the right size `(1, 3)`, we will talk more about tuples later in the book.
+{/blurb}
 
 ## Shadowing
 
