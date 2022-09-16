@@ -176,3 +176,5 @@ fn main() {
 	let (a, b, c) = (2, 3, "pink");
 }
 ```
+
+{pagebreak}

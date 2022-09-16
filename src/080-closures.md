@@ -56,3 +56,5 @@ v.iter()
 	.filter(|x| *x > 10)
 	.fold(0, |acc, x|, acc + x);
 ```
+
+{pagebreak}

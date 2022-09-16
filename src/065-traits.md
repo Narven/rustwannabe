@@ -88,3 +88,5 @@ fn main() {
 ```
 
 **NOTE:** You cant define `FIELDS` in Traits. (Maybe added in the future). Alternative use getters and setters
+
+{pagebreak}

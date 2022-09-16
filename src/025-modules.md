@@ -4,57 +4,78 @@ Modules allows use to split and organize our code into blocks of code that are r
 
 By using the keyword `mod` we can specific a module, and write inside the `{}` the code we need.
 
-```rust
-mod server {
-  pub struct Server {
-    addr: String,
-  }
+## Modules in external files
 
-  impl Server {
-    pub fn new(addr: String) -> Self {
-      Self { addr }
-    }
-  }
+A simple example using modules
+
+Create a file `car.rs`.
+
+{caption: "src/car.rs"}
+```rust
+// function needs to public `pub`
+pub fn change_radio_station(mhz: f64) {
+  println!("Changed station to {}", mhz);
 }
 
-// Usage
-server::Server::new("127.0.0.1:8080".to_string());
-```
-
-The code above is an example of an `inline module`. We can also define modules per `file`.
-
-<p>
-> Every file in Rust is treated like a module.
-</p>
-
-
-_server.rs_
-```rust
-pub struct Server {
-  addr: String,
-}
-
-impl Server {
-  pub fn new(addr: String) -> Self {
-    Self { addr }
-  }
+// function needs to be public `pub`
+pub fn turn_off_radio() {
+  println!("Radio turned off");
 }
 ```
 
-_main.rs_
+{caption: "src/main.rs"}
 ```rust
-use server::Server; // we import the module file
-
-// we defined that we want to use it
-// imagine that the compile is pasting the contents of what
-// is in the file here.
-mod server;
+// In main we `import` using `mod car`.
+mod car;
 
 fn main() {
-  // and we call the struct with its associated method
-  let serv = Server::new("127.0.0.1:8080".to_string());
+  car::change_radio_station(101.10);
+  car::turn_off_radio();
 }
 ```
+
+## Modules in the same file
+
+{caption: "src/main.rs"}
+```rust
+// this module is defined in the same file has main.rs
+// still needs to be `pub`
+pub mod car {
+    pub fn start_cart() { // still needs to be `pub`
+        println!("Starting car...");
+    }
+}
+
+fn main() {
+    car::start_cart(); // we just call our module
+}
+```
+
+## Nested Modules
+
+We can nest modules just by creating a another module inside an existing one, but we cannot forget to make them public with `pub`.
+
+{caption: "Example with nested modules"}
+```rust
+pub mod car {
+  pub mod engine {
+    pub fn ignite() {
+      println!("Ignite fuel...");
+    }
+  }
+
+  pub fn start_cart() {
+    println!("Starting car...");
+  }
+}
+
+fn main() {
+  car::engine::ignite();
+  car::start_cart();
+}
+```
+
+## Modules in subfolders
 
 You can also use folders to separate modules:
 
@@ -193,3 +214,5 @@ fn main() {
 	let x = thread_rng().gen_range(0, 100);
 }
 ```
+
+{pagebreak}
