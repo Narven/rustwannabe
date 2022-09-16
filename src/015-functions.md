@@ -5,17 +5,14 @@ fn do_stuff() {
 }
 ```
 
-
-Funtions:
-
+Funtions requirements:
 
 - start with `fn` (FUN)
-- snake_case by convention
-- they dont have to appear in any order to be able to be called
-
+- `snake_case` by naming convention
+- they don't have to appear in any specific order to be able to be called
 
 ```rust
-fn do_stuff(qty: i32, oz: f64) -> f64 {
+fn do_stuff(speed: f64, gaz: f64) -> f64 {
 	// body
 }
 ```
@@ -24,18 +21,18 @@ fn do_stuff(qty: i32, oz: f64) -> f64 {
 - return type is defined by `->` `type` 
 
 ```rust
-fn do_stuff(qty: i32, oz: f64) -> f64 {
-	return qty * oz;
+fn do_stuff(speed: f32, gas: f64) -> f64 {
+	return speed *gas;
 }
 ```
 
 - return values use the `return` keyword
 
-**Tail Expression** - alternative syntax for returning: 
+`Tail Expression` - alternative syntax for returning: 
 
 ```rust
-fn do_stuff(qty: i32, oz: f64) -> f64 {
-	qty * oz // short syntax for return
+fn do_stuff(speed: f32, gas: f64) -> f64 {
+	speed * gas // short syntax for return, no semicolon in last statement
 }
 ```
 
@@ -47,3 +44,5 @@ fn do_stuff(qty: i32, oz: f64) -> f64 {
 // same
 { true }
 ```
+
+> At the time of the writting of this book (2022), named arguments dont exist in functions.
