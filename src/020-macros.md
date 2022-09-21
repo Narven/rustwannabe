@@ -1,14 +1,14 @@
 # Macros
 
-Macros always end with `!`. At the core it means that a macro will expand into more complex code. That is a more advanced topic, not discussed in this book.
+Macros always end with `!`. At the core, it means that a macro will expand into more complex code. That is a more advanced topic, not discussed in this book.
 
 We give a brief overview of the most common macros used.
 
 ## println!
 
-Printing to the console is something that is extremely valueable, both for debugging or to show information to the user.
+Printing to the console is extremely valuable, both for debugging and to show information to the user.
 
-`println!` is a macro (more on that on the section of Macros). Any function syntax that the name ends in `!` is a macro in Rust.
+`println!` is a macro (more on that in the section of Macros). Any function syntax that the name ends in `!` is a macro in Rust.
 
 ```rust
 fn main() {

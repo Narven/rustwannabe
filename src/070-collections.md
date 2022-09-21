@@ -135,9 +135,9 @@ fn main() {
 ## HashMap<K, V>
 
 
-HashMap's are what in other languages are refered to `Dictionaries` .
+Hashmaps are what in other languages are referred to as `Dictionaries`.
 
-Defining a HashMap, we need to specify the type of Key (K), and Value (V)
+Defining a HashMap, we need to specify the type of Key (K), and Value (V).
 
 ```rust
 let mut h: HashMap<u8, bool> = HashMap::new();

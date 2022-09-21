@@ -2,6 +2,12 @@
 
 Functions allow us to create smaller blocks of code that have a specific purpose.
 
+{blurb, class: info}
+Till now I've added `asserts` to the code, but from this section onwards, by learning how to work with functions, we are going to start having unit tests in almost all the examples.
+
+I'm doing this so that people can almost from the start get a feeling and grow familiar with testing the code, and this is even better with rust since tests are done in the same file where the code is. This means that most of the code will be encapsulated inside functions so that we can test them.
+{/blurb}
+
 Funtions requirements:
 * start with `fn` (FUN)
 * `snake_case` by naming convention
@@ -23,24 +29,35 @@ fn main() {
 
 ## Passing by value (borrowing)
 
-Passing by value means that the value of the variable is copied into the destination, in the next example it would be the `say_hello` function.
+Passing by value means that the value of the variable is copied into the destination, in the next example, it would be the `say_hello` function.
 
 {caption: "Example passing by value"}
 ```rust
 fn main() {
-	let name = "John"; // `name` is owned by `main()`
-	say_hello(name); // it's borrowed by `say_hello` and return back
-	println!("{}", name);
+    let name = "John"; // `name` is owned by `main()`
+    let result = say_hello(name); // it's borrowed by `say_hello` and return back
+    println!("{}", result);
 }
 
-fn say_hello(name: &str) { // variable is borrowed (copied)
-	println!("Hello {}", name); // when the function finishes it gets return to the owner `main`
+fn say_hello(name: &str) -> String { // variable is borrowed (copied)
+    format!("Hello {}", name) // when the function finishes it gets return to the owner `main`
+}
+
+#[cfg(test)]
+mod tests {
+    use crate::say_hello;
+
+    #[test]
+    fn test_say_hello() {
+        assert_eq!(say_hello("World!"), "Hello World!");
+    }
 }
 ```
 
+
 ## Pass by reference
 
-We pass by reference meaning that we are allowed to change the data.
+We pass by reference means that we are allowed to change the data.
 
 {caption: "Example passing by reference"}
 ```rust
@@ -102,7 +119,7 @@ fn do_stuff(speed: f32, gas: f64) -> f64 {
 { true }
 ```
 
-> At the time of the writting of this book (2022), named arguments dont exist in functions.
+> At the time of the writing of this book (2022), named arguments don't exist in functions.
 
 
 {pagebreak}

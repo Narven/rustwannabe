@@ -9,7 +9,7 @@ fn do_stuff(s: &String) {
 }
 ```
 
-This way the ownership of the value still belongs to `s1` . The reference, not the value gets moved into `do_stuff` . At the end of the function, the reference gets lost, but the value continues with `s1` .
+This way the ownership of the value still belongs to `s1`. The reference, not the value gets moved into `do_stuff`. At the end of the function, the reference gets lost, but the value continues with `s1`.
 
 ![image](https://res.craft.do/user/full/3120da64-5cee-db1f-837f-1804f348eae7/A04DF607-8CB6-44B7-8945-1AEA611EB238_2/6t8KG2bgCN0oPKQyPfsMWkZeqrDVKdIy4lrBFRmHuycz/Screenshot%202022-03-26%20at%2014.16.45.png)
 

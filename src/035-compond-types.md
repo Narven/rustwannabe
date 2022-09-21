@@ -7,6 +7,12 @@
 
 ## Tuples
 
+Tuples rules:
+* They cannot be resized, they are static.
+* Elements values can be updated
+* Elements are indexed, so they can be accessed
+* Limited to 12 elements
+
 ```rust
 let info = (1, 3.3, 999);
 // or
@@ -15,7 +21,7 @@ let info: (u8, f64, i32) = (1, 3.3, 999);
 
 *How to access members of a tuple (2 ways)*
 
-Dot syntax:
+Dot syntax (using position):
 
 ```rust
 let info = (1, 3.3, 999);
@@ -24,17 +30,26 @@ let fuel = info.1;
 let ammo = info.2;
 ```
 
-Destructuring:
+Destructuring (extract elements from tuple):
 
 ```rust
-let info = (1, 3.3, 999);
-let (jets, fuel, ammo) = info;
+fn main() {
+    let info: (i32, f64, i32) = (1, 3.3, 999);
+    let (jet, fuel, ammo) = info;
+
+    println!("{}", jet);
+    println!("{}", fuel);
+    println!("{}", ammo)
+}
+
+// 1
+// 3.3
+// 999
 ```
 
-> arity means how many items are in the tuple
-
-> maximum arity in tuples is 12
-
+{blurb, class: tip}
+Arity means how many items are in the tuple
+{/blurb}
 
 ## Structs
 
@@ -47,9 +62,9 @@ struct RedFox {
 }
 ```
 
-- starts with the keyworkd `struct`
-- followed by the name with `KebabCase`
-- last field needs ending comma `,`
+- starts with the keyword `struct`
+- followed by the name in `KebabCase`
+- the last field needs an ending comma `,`
 
 **Instantiating a struct**
 
@@ -61,7 +76,7 @@ let fox = RedFox {
 ```
 
 
-but usually o implement a associated function:
+but usually o implement an associated function:
 
 ```rust
 impl RedFox {
@@ -75,7 +90,7 @@ impl RedFox {
 ```
 
 
-the uses a implementation block `impl` that is separated from the struct definition.
+the uses an implementation block `impl` that is separated from the struct definition.
 
 this would be used like this:
 

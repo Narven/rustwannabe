@@ -1,6 +1,6 @@
 # Closures
 
-> Closure is anonymous function that can borrow or capture some data in the scope is nested in.
+> The Closure is an anonymous function that can borrow or capture some data in the scope that is nested.
 
 
 Sintaxe:
@@ -9,13 +9,12 @@ Sintaxe:
 | x , y | { x + y }
 ```
 
-- has not types. Types will be infered on how the anonymous function is behing used.
+- Has no types. Types will be inferred on how the anonymous function is being used.
 
 ```rust
 let add = |x,y| { x + y };
 add(1, 2); // returns 3;
 ```
-
 
 We dont need to have parameters, they can be empty:
 
@@ -33,7 +32,7 @@ let f = || {
 f(); // prints 🍓️
 ```
 
-> `s` value will be owned by the root, the closure `borrows` by default.
+> `s` value will be owned by the root, and the closure `borrows` by default.
 
 
 ```rust

@@ -1,12 +1,12 @@
 # Modules
 
-Modules allows use to split and organize our code into blocks of code that are related.
+Modules allow us to split and organize our code into blocks of code that are related.
 
-By using the keyword `mod` we can specific a module, and write inside the `{}` the code we need.
+By using the keyword `mod` we can specify a module, and write inside the `{}` the code we need.
 
 ## Modules in external files
 
-A simple example using modules
+A simple example of using modules
 
 Create a file `car.rs`.
 
@@ -53,7 +53,7 @@ fn main() {
 
 ## Nested Modules
 
-We can nest modules just by creating a another module inside an existing one, but we cannot forget to make them public with `pub`.
+We can nest modules just by creating another module inside an existing one, but we cannot forget to make them public with `pub`.
 
 {caption: "Example with nested modules"}
 ```rust

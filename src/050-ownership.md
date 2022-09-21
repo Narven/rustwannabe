@@ -15,7 +15,7 @@ let s2 = s1;
 
 After this point `s1` is no longer the owner of the value;
 
-Will get an error if we try to access `s1` 
+We will get an error if we try to access `s1`.
 
 ```rust
 let s1 = String::from("abc");

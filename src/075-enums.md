@@ -54,7 +54,7 @@ enum Option<T> {
 ```
 
 
-Since Enums can be anything you need to pattern match using `if let`
+Since Enums can be anything you need to pattern match using `if let`.
 
 ```rust
 if let Some(x) = my_variable {
@@ -75,9 +75,9 @@ match my_variable {
 }
 ```
 
-> paterns in a match must be exaustive (all possible outcomes must be defined)
+> patterns in a match must be exhaustive (all possible outcomes must be defined)
 
-We can use underscore `_` for any match:
+We can use the underscore `_` for any match:
 
 ```rust
 match my_variable {
@@ -103,7 +103,7 @@ match "abcd" {
 
 
 **Option**
-> Options is used when something might be absent.
+> Options are used when something might be absent.
 
 
 ```rust
